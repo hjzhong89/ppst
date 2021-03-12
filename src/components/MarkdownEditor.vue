@@ -10,12 +10,16 @@
       <textarea class="md-edit"
                 v-if="isEditing"
                 v-model="rawText"
+                aria-label="Problem Description"
       ></textarea>
     </div>
-    <div class="change-btn"
-         v-on:click="toggleEdit">
+    <button class="change-btn"
+            v-if="isEditing"
+            v-on:click="toggleEdit"
+            aria-label="Submit Changes"
+    >
       Submit
-    </div>
+    </button>
   </div>
 </template>
 
@@ -25,7 +29,12 @@ import * as purify from 'dompurify';
 
 export default {
   name: 'MarkdownEditor',
-  props: {},
+  props: {
+    defaultText: {
+      type: String,
+      default: '',
+    },
+  },
   computed: {
     md() {
       if (!this.rawText) {
@@ -44,6 +53,9 @@ export default {
     toggleEdit() {
       this.isEditing = !this.isEditing;
     },
+  },
+  mounted() {
+    this.rawText = this.defaultText;
   },
 };
 </script>
