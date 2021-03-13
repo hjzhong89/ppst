@@ -8,10 +8,11 @@
     <div class="problems">
       <hr/>
       <h3>Problems</h3>
-      <p v-for="problem in problems"
-         v-bind:key="problem.id">
+      <div class="stackable"
+           v-for="problem in problems"
+           v-bind:key="problem.id">
         {{problem.name}}
-      </p>
+      </div>
     </div>
   </div>
 </template>
@@ -59,5 +60,20 @@ export default {
 }
 .view-container {
   width: 100%;
+}
+
+.problem-stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.stackable {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 15px;
+  border: #2c3e50 1px solid;
+  margin: 2px 0;
 }
 </style>
