@@ -4,7 +4,7 @@
     <div id="body-container">
       <div id="side-bar"></div>
       <div id="content">
-        <ProblemSets title="CS6460: Sorting Algorithms"></ProblemSets>
+        <ProblemDetail></ProblemDetail>
       </div>
     </div>
   </div>
@@ -13,9 +13,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ProblemSets from '@/views/ProblemSets.vue';
+import ProblemDetail from '@/views/ProblemDetail.vue';
 
 @Component({
   components: {
+    ProblemDetail,
     ProblemSets,
   },
 })

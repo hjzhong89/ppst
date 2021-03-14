@@ -5,13 +5,16 @@
       <h4>Description</h4>
       <MarkdownEditor :default-text="description" />
     </div>
-    <div class="problems">
+    <div class="problem-stack">
       <hr/>
       <h3>Problems</h3>
       <div class="stackable"
            v-for="problem in problems"
            v-bind:key="problem.id">
-        {{problem.name}}
+        <span class="problem"
+              v-on:click="loadProblem(problem.id)">
+          {{problem.name}}
+        </span>
       </div>
     </div>
   </div>
@@ -49,6 +52,11 @@ export default {
       problems: problems,
     };
   },
+  methods: {
+    loadProblem(id) {
+      this.$emit('loadProblem', id);
+    },
+  },
 };
 </script>
 
@@ -75,5 +83,9 @@ export default {
   padding: 15px;
   border: #2c3e50 1px solid;
   margin: 2px 0;
+}
+
+.problem {
+  cursor: pointer;
 }
 </style>
