@@ -16,9 +16,9 @@
     <button class="change-btn"
             v-if="isEditing"
             v-on:click="toggleEdit"
-            aria-label="Submit Changes"
+            aria-label="Save Changes"
     >
-      Submit
+      Save
     </button>
   </div>
 </template>
