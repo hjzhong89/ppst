@@ -1,7 +1,7 @@
 <template>
   <div class="view-container">
-    <h3>{{problemSet.name}}</h3>
-    <h1>{{name}}</h1>
+    <h3>{{ problemSet.name }}</h3>
+    <h1>{{ name }}</h1>
     <div class="details">
       <hr/>
       <div class="detail">
@@ -27,24 +27,26 @@
       <div v-for="session in sessions"
            v-bind:key="session.id"
            class="session">
-        <span>{{session.name}}</span>
+        <span>{{ session.name }}</span>
         <div class="justify-end">
           <div class="users">
             <div v-for="user in session.users"
                  v-bind:key="user[0]"
                  class="user">
-              {{user[0]}}
+              {{ user[0] }}
             </div>
           </div>
           <button class="join-btn">Join</button>
         </div>
       </div>
     </div>
+    <Whiteboard></Whiteboard>
   </div>
 </template>
 
 <script>
 import MarkdownEditor from '@/components/MarkdownEditor.vue';
+import Whiteboard from '@/components/Whiteboard.vue';
 
 const defaultProblem = {
   problemSet: {
@@ -74,7 +76,7 @@ const defaultSessions = [
 
 export default {
   name: 'ProblemDetail',
-  components: { MarkdownEditor },
+  components: { Whiteboard, MarkdownEditor },
   data() {
     return { ...defaultProblem, sessions: defaultSessions };
   },
@@ -87,6 +89,7 @@ export default {
   flex-direction: column;
   justify-content: start;
 }
+
 .detail {
   display: flex;
   flex-direction: column;
@@ -96,6 +99,7 @@ export default {
 .detail input {
   padding: 5px;
 }
+
 .session {
   display: flex;
   flex-direction: row;
@@ -106,28 +110,34 @@ export default {
   text-anchor: middle;
 
 }
+
 .session span {
   align-self: start;
 }
+
 .ac-editor .md-editor {
   height: 15px;
   border: none;
 }
+
 .users {
   display: flex;
   flex-direction: row;
 }
+
 .user {
-  padding:5px;
+  padding: 5px;
   border-radius: 45%;
   background: white;
   margin: 0 2px;
 }
+
 .join-btn {
   border-radius: 2px;
   border: none;
   margin: 0 10px;
 }
+
 .justify-end {
   display: flex;
   flex-direction: row;
