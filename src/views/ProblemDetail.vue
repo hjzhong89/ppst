@@ -36,17 +36,17 @@
               {{ user[0] }}
             </div>
           </div>
-          <button class="join-btn">Join</button>
+          <button class="join-btn">
+            <router-link to="/session">Join</router-link>
+          </button>
         </div>
       </div>
     </div>
-    <Whiteboard style="width: 100%;"></Whiteboard>
   </div>
 </template>
 
 <script>
 import MarkdownEditor from '@/components/MarkdownEditor.vue';
-import Whiteboard from '@/components/Whiteboard.vue';
 
 const defaultProblem = {
   problemSet: {
@@ -76,7 +76,7 @@ const defaultSessions = [
 
 export default {
   name: 'ProblemDetail',
-  components: { Whiteboard, MarkdownEditor },
+  components: { MarkdownEditor },
   data() {
     return { ...defaultProblem, sessions: defaultSessions };
   },

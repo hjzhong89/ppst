@@ -4,7 +4,7 @@
     <div id="body-container">
       <div id="side-bar"></div>
       <div id="content">
-        <ProblemDetail></ProblemDetail>
+        <router-view/>
       </div>
     </div>
   </div>

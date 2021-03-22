@@ -1,9 +1,9 @@
 <template>
   <div class="view-container">
-    <div class="problemset-title">{{title}}</div>
+    <div class="problemset-title">{{ title }}</div>
     <div class="details">
       <h4>Description</h4>
-      <MarkdownEditor :default-text="description" />
+      <MarkdownEditor :default-text="description"/>
     </div>
     <div class="problem-stack">
       <hr/>
@@ -11,10 +11,9 @@
       <div class="stackable"
            v-for="problem in problems"
            v-bind:key="problem.id">
-        <span class="problem"
-              v-on:click="loadProblem(problem.id)">
-          {{problem.name}}
-        </span>
+        <router-link :to="`/problem/${problem.id}`">
+          <span class="problem">{{ problem.name }}</span>
+        </router-link>
       </div>
     </div>
   </div>
@@ -66,6 +65,7 @@ export default {
   font-size: 1.5em;
   font-weight: bold;
 }
+
 .view-container {
   width: 100%;
 }
