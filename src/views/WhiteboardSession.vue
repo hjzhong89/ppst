@@ -41,14 +41,14 @@ export default {
   },
   data() {
     return {
-      showProblem: false,
+      showProblem: true,
       modal: {},
     };
   },
   mounted() {
     this.modal = this.$el.getElementsByClassName('problem-modal')[0]
     this.tag = this.modal.getElementsByClassName('modal-tag')[0];
-    this.modal.style.right = `${this.modalOffset}px`
+    this.modal.style.right = '0px'
   },
   methods: {
     toggleModal() {
