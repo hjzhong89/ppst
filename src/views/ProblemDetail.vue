@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <Whiteboard></Whiteboard>
+    <Whiteboard style="width: 100%;"></Whiteboard>
   </div>
 </template>
 

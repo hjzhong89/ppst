@@ -1,22 +1,20 @@
-import Vue from 'vue';
-
-const defaultFunction = (e: Event, canvas: Vue) => {
-  console.log(e, canvas);
+const defaultFunction = (e: MouseEvent, canvas: Element, ctx: CanvasRenderingContext2D) => {
+  console.log(e, canvas, ctx);
 };
 
 export default class WhiteboardTool {
   // eslint-disable-next-line class-methods-use-this
-  onMouseDown(e: Event, canvas: Vue) {
-    defaultFunction(e, canvas);
+  onMouseDown(e: MouseEvent, canvas: Element, ctx: CanvasRenderingContext2D) {
+    defaultFunction(e, canvas, ctx);
   }
 
   // eslint-disable-next-line class-methods-use-this
-  onMouseUp(e: Event, canvas: Vue) {
-    defaultFunction(e, canvas);
+  onMouseUp(e: MouseEvent, canvas: Element, ctx: CanvasRenderingContext2D) {
+    defaultFunction(e, canvas, ctx);
   }
 
   // eslint-disable-next-line class-methods-use-this
-  onMouseMove(e: Event, canvas: Vue) {
-    defaultFunction(e, canvas);
+  onMouseMove(e: MouseEvent, canvas: Element, ctx: CanvasRenderingContext2D) {
+    defaultFunction(e, canvas, ctx);
   }
 }
